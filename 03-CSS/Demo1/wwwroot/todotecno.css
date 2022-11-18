@@ -1,0 +1,123 @@
+﻿#idPrecio {
+    color: green;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+#idSku {
+    color: darkblue;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+img {
+    border-radius: 10%;
+}
+
+p {
+    color: gray;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.table {
+    border-collapse: collapse;
+    border-bottom-color: white;
+    border-top-color: white;
+    justify-content:center;
+}
+
+
+.section {
+    border-top: 1em solid transparent;
+}
+
+ul {
+    padding-left: 90px;
+    list-style-type: none;
+}
+
+.tdImage {
+    align-content: center;
+}
+
+nav {
+    display: block;
+}
+
+li {
+    float: left;
+}
+
+    li a {
+        display: block;
+        padding: 20px;
+        background-color: #dddddd;
+    }
+
+.texto {
+    text-align: center;
+}
+
+.titulo {
+    padding-bottom: 50px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+h2 {
+    padding: 50px;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: #199319;
+}
+
+.nav-btn {
+    background-color: green;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 50%
+}
+
+.nav-btn-detalles {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 50%;
+    content: ">>";
+}
+
+.redondeado {
+    border-radius:50%;
+    width:200px;
+    height:200px;
+}
+
+.nav-btn-comprar {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.nav-btn-detalles:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+.nav-btn:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.container {
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    margin-right: 2em;
+}
