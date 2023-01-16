@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgramacionCsharp.POO
+namespace ProgramacionCsharp.POO.Animal
 {
-    internal class Perro : Animal
+    public class Gato : Animal
     {
-        public Perro(string nombre, string raza)
+        public Gato(string nombre, string raza)
         {
             Nombre = nombre;
             Raza = raza;
@@ -19,7 +19,7 @@ namespace ProgramacionCsharp.POO
 
         public override string GetDetalle()
         {
-            return $"Detalles del Perro, Nombre {Nombre}, Raza {Raza}";
+            return $"Detalles del Gato, Nombre {Nombre}, Raza {Raza}";
         }
     }
 }

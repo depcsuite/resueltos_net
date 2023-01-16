@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgramacionCsharp.POO
+namespace ProgramacionCsharp.POO.Animal
 {
 
     public class Animal
@@ -16,8 +16,8 @@ namespace ProgramacionCsharp.POO
             return $"Nombre {Nombre} - Raza {Raza}";
         }
 
-    
+
     }
 
-   
+
 }

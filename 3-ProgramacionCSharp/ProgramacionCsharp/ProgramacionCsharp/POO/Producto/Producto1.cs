@@ -1,21 +1,22 @@
-﻿using System;
+﻿using ProgramacionCsharp.POO.Producto.Producto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgramacionCsharp.POO
+namespace ProgramacionCsharp.POO.Producto
 {
 
-    public class Producto
+    public class Producto1
     {
 
-        public Producto()
+        public Producto1()
         {
 
         }
 
-        public Producto(string sku, string marca, string modelo, string detalle)
+        public Producto1(string sku, string marca, string modelo, string detalle)
         {
             //Id = id; //El id esta asociado a la base de datos. Se genera automaticamente.
             Sku = sku;

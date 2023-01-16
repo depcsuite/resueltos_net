@@ -1,8 +1,10 @@
 ﻿using ProgramacionCsharp.POO;
+using ProgramacionCsharp.POO.Persona;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,204 +14,155 @@ namespace ProgramacionCsharp
     {
         private static void Main(string[] args)
         {
-            List<Animal> animales = new List<Animal>();
-            animales.Add(new Perro("Toby", "Chiguagua"));
-            animales.Add(new Gato("Tom", "Siames"));
+            List<Profesor> profes = GetProfesores();
 
-            Console.WriteLine($"Animal: {animales[0].GetDetalle()}");
-            Console.WriteLine($"Perro: {((Perro)animales[0]).GetDetalle()}");
-            Console.WriteLine($"Gato:  {((Gato)animales[1]).GetDetalle()}");
-        
+            Estudiante est = GetEstudiante();
 
+            //Mostrar datos basicos del estudiante
+            Console.WriteLine($"Nombre: {est.Nombre}, Promedio: {est.Promedio}  ");
+            Console.WriteLine($"Asiste a los siguientes seminarios:");
 
-            //perro.Raza, perro.Nombre, perro.GetDetalle();
+            var seminarios = GetSeminariosByCode(est.CodSeminarios);
 
-
-            Producto[] prods = new Producto[3];
-            //prods = CargarProductos(prods);
-
-            //Collecciones son agregaciones de tamaño variable 
-            //List --> En la práctica es una arreglo de tamaño dinámico.
-            //Dictionary --> Hasmap, Map, Key/Value 
-
-            //Generics o genericos (System.Collections.Generic) permite definir tipo
-            //de datos genéricos, es decir tipo que NO se conocen su definición.
-
-
-            List<string> list = new List<string>();
-            list.Add("elemento1");
-            list.Add("elemento2");
-            list.Add("elemento3");
-            list.Add("elemento4");
-            list.Add("elemento5");
-
-            for (int i = 0; i < list.Count; i++)
-                Console.WriteLine(list[i]);
-
-            foreach (var n in list)
-                Console.WriteLine(n);
-
-
-            List<int> nlist = new List<int>();
-            nlist.Add(1);
-            nlist.Add(2);
-            nlist.Add(3);
-            nlist.Add(4);
-            nlist.Add(5);
-
-            for (int i = 0; i < nlist.Count; i++)
-                Console.WriteLine(nlist[i]);
-
-            foreach (var n in nlist)
-                Console.WriteLine(n);
-
-            List<Producto> productos = CargarListaProductos();
-
-            foreach (var p in productos)
+            foreach (var s in seminarios)
             {
-                Console.WriteLine($"Producto: {p.Sku}:");
-                Console.WriteLine(p.Marca);
-                Console.WriteLine(p.Modelo);
-                Console.WriteLine(p.Sku);
-                Console.WriteLine(p.Detalle);
-                Console.WriteLine(p.Especificaciones.CodBarras);
+                Console.WriteLine($"Seminario: {s.Codigo}-{s.Nombre}");
+            }
+        }
+
+        private static List<Seminario> GetSeminariosByCode(List<string>codigos)
+        {
+            var seminarios = new List<Seminario>();
+
+            var seminario = new Seminario()
+            {
+                Codigo = "z34",
+                Nombre = "Fisica nuclear",
+                Catedra = "Física"
+
+            };
+
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "z15",
+                Nombre = "Topologia algebraica",
+                Catedra = "Matematicas"
+            };
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "z24",
+                Nombre = "Teoria de numeros",
+                Catedra = "Matematicas"
+            };
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "z334",
+                Nombre = "Calculo multivariable",
+                Catedra = "Matematicas"
+            };
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "z243",
+                Nombre = "Quimica genereal 1",
+                Catedra = "Quimica"
+            };
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "z334",
+                Nombre = "Mecanica de los fluidos ",
+                Catedra = "Mecanica"
+            };
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "w3324",
+                Nombre = "Electroncia del estado solido II",
+                Catedra = "Electronica"
+            };
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "z234",
+                Nombre = "Sistemas Operativos",
+                Catedra = "Sistemas"
+            };
+            seminarios.Add(seminario);
+
+            seminario = new Seminario()
+            {
+                Codigo = "z2334",
+                Nombre = "Algoritmo y estructura de datos",
+                Catedra = "Matematicas"
+            };
+            seminarios.Add(seminario);
+
+            //Filtramos por codigo
+            //A lo bruto
+            var seminariosFiltrados = new List<Seminario>(); 
+            
+            foreach (var s in seminarios)
+            {
+                if (codigos.Contains(s.Codigo))
+                    seminariosFiltrados.Add(s);
             }
 
-            //Console.WriteLine($"Marca y modelo del prod1: {prods[0].Marca},{prods[0].Modelo}");
-            //Console.WriteLine($"Marca y modelo del prod2: {prods[1].Marca},{prods[1].Modelo}");
-            //Console.WriteLine($"Marca y modelo del prod3: {prods[2].Marca},{prods[2].Modelo}");
-            Console.ReadLine();
+            //Filtro por el primer codigo
+            seminariosFiltrados = seminarios.Where(c => c.Codigo == codigos[0]).ToList();
+
+            //Filtro por el primer codigo
+            seminariosFiltrados = (from s in seminarios
+                                   where s.Codigo == codigos[0]
+                                   select s).ToList();
+
+            
+            return seminariosFiltrados;
 
         }
 
-        private static List<Producto> CargarListaProductos()
+        private static List<Profesor> GetProfesores()
         {
-            List<Producto> productos = new List<Producto>();
-            productos.Add(new Producto()
-            {
-                Detalle = "Detalles 2",
-                Marca = "TALENT",
-                Modelo = "Modelo 2",
-                Sku = "t9000",
-                Especificaciones = new Especificaciones()
-                {
-                    CodBarras = "77774843838238",
-                    IRAM = true,
-                    Nacional = false
-                }
-            });
-            productos.Add(new Producto()
-            {
-                Detalle = "Detalles 3",
-                Marca = "TALENT",
-                Modelo = "Modelo 2",
-                Sku = "t9000",
-                Especificaciones = new Especificaciones()
-                {
-                    CodBarras = "7785954393489569834",
-                    IRAM = false,
-                    Nacional = true
-                }
-            });
-            productos.Add(new Producto()
-            {
-                Detalle = "Detalles 2",
-                Marca = "SDFSDF",
-                Modelo = "Modelo 2",
-                Sku = "t9000",
-                Especificaciones = new Especificaciones()
-                {
-                    CodBarras = "5684309654587960754",
-                    IRAM = true,
-                    Nacional = true
-                }
-            });
+            List<Profesor> profes = new List<Profesor>();
 
-            productos.Add(new Producto()
+            var prof = new Profesor()
             {
-                Detalle = "Detalles 2",
-                Marca = "FDSFDS",
-                Modelo = "Modelo 2",
-                Sku = "t9000",
-                Especificaciones = new Especificaciones()
-                {
-                    CodBarras = "009804856943854309",
-                    IRAM = true,
-                    Nacional = true
-                }
-            });
-            productos.Add(new Producto()
-            {
-                Detalle = "Detalles 2",
-                Marca = "TALENT",
-                Modelo = "FDSFSDF 2",
-                Sku = "t90FDSFDSFSDF00",
-                Especificaciones = new Especificaciones()
-                {
-                    CodBarras = "5743957439753",
-                    IRAM = true,
-                    Nacional = false
-                }
-            });
-            return productos;
-        }
-
-        private static Producto[] CargarProductos(Producto[] prods)
-        {
-
-            //Carga datos en productos
-            //Primera opcion, usando constructor vacio
-            prods[0] = new Producto();
-            prods[0].Detalle = "Detalles 1";
-            prods[0].Marca = "HITACHI";
-            prods[0].Modelo = "Modelo 1";
-            prods[0].Sku = "p1000";
-
-            //Otra forma
-            var prod2 = new Producto()
-            {
-                Detalle = "Detalles 2",
-                Marca = "TALENT",
-                Modelo = "Modelo 2",
-                Sku = "t9000"
+                Email = "carlos.mendieta@uni.edu.ar",
+                Nombre = "Carlos Jorge Fernandez",
+                Salario = 120000,
+                Telefono = "555-4543543"
             };
 
-            prods[1] = prod2;
+            profes.Add(prof);
 
-
-            //Otra forma
-            var prod3 = new Producto("x5600", "AIWA", "djklf", "Detalles 3");
-
-            prods[2] = prod3;
-
-            return prods;
+            return profes;
         }
 
-
-        private static void CargarProductos()
+        private static Estudiante GetEstudiante()
         {
-            //Carga datos en productos
-            //Primera opcion, usando constructor vacio
-            var prod = new Producto();
-            prod.Detalle = "Detalles 1";
-            prod.Marca = "HITACHI";
-            prod.Modelo = "Modelo 1";
-            prod.Sku = "p1000";
-
-            //Otra forma
-            var prod2 = new Producto()
+            var est = new Estudiante()
             {
-                Detalle = "Detalles 2",
-                Marca = "TALENT",
-                Modelo = "Modelo 2",
-                Sku = "t9000"
+                Email = "sarasa@gmail.com",
+                Nombre = "Juan Perez",
+                NroEstudiante = 323,
+                Enrolable = false,
+                Promedio = 6,
+                Telefono = "555-3243423"
             };
 
-            //Otra forma
-            var prod3 = new Producto("x5600", "AIWA", "djklf", "Detalles 3");
+            est.CodSeminarios = new List<string> { "z15", "z234", "z243" };
 
-           
+            return est;
         }
-
     }
 }

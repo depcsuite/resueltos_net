@@ -1,4 +1,4 @@
-﻿namespace ProgramacionCsharp.POO
+﻿namespace ProgramacionCsharp.POO.Producto.Producto
 {
     public class Especificaciones
     {
