@@ -1,0 +1,21 @@
+﻿
+@model  List<TiendaLibros.Models.Libro>
+
+@*var Model = new  IEnumerable<TiendaLibros.Models.Libro>*@
+
+<h1>Libros mas vendidos</h1>
+
+@foreach(var m in Model)
+{
+    <div class="card mt-5" style="width: 18rem;">
+        <img class="card-img-top imagesize align-content-center"  src="~/img/@m.PortadaUri" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@m.Titulo</h5>
+                    <p class="card-text">@m.Autor</p>
+                    <p class="card-text">@m.Precio</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+     </div>
+
+}
+
