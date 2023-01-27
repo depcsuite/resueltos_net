@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TiendaLibros.Data;
 
@@ -11,9 +12,10 @@ using TiendaLibros.Data;
 namespace TiendaLibros.Migrations
 {
     [DbContext(typeof(LibrosDBContext))]
-    partial class LibrosDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230126215040_SeedingInitialData")]
+    partial class SeedingInitialData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
