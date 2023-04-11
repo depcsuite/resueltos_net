@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 4,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-04-11T06:03:33.271Z",
+    "end": "2023-04-11T06:03:33.294Z",
+    "duration": 23,
+    "testsRegistered": 6,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3fe8188e-0df2-45cd-8926-4b3b530de31e",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4e27792e-e51c-4659-ad18-25aa792410c4",
+          "title": "Operaciones con arrays",
+          "fullFile": "C:\\Users\\sergi\\fuentes\\resueltos_net\\8-JavaScript\\Testing\\Ejemplo1\\test\\test.array.js",
+          "file": "\\Testing\\Ejemplo1\\test\\test.array.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "sumar elementos",
+              "fullTitle": "Operaciones con arrays sumar elementos",
+              "timedOut": false,
+              "duration": 5,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "equal(sumar(arr), 0);",
+              "err": {
+                "message": "AssertionError: 0",
+                "estack": "AssertionError [ERR_ASSERTION]: 0\n    at Context.<anonymous> (file:///C:/Users/sergi/fuentes/resueltos_net/8-JavaScript/Testing/Ejemplo1/test/test.array.js:11:5)\n    at process.processImmediate (node:internal/timers:471:21)",
+                "diff": null
+              },
+              "uuid": "a0ed8847-e703-488d-b697-4cdbccdc79c3",
+              "parentUUID": "4e27792e-e51c-4659-ad18-25aa792410c4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a0ed8847-e703-488d-b697-4cdbccdc79c3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 6000
+        },
+        {
+          "uuid": "91a7f29c-765b-4fda-907a-f1d3399c4e30",
+          "title": "Operaciones básicas",
+          "fullFile": "C:\\Users\\sergi\\fuentes\\resueltos_net\\8-JavaScript\\Testing\\Ejemplo1\\test\\test.operaciones.js",
+          "file": "\\Testing\\Ejemplo1\\test\\test.operaciones.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "suma dos números",
+              "fullTitle": "Operaciones básicas suma dos números",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "equal(sumar(2, 3), 5);",
+              "err": {},
+              "uuid": "5cb80a5c-3cb5-446c-b4dc-5cf6acef6a12",
+              "parentUUID": "91a7f29c-765b-4fda-907a-f1d3399c4e30",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "multiplica dos números",
+              "fullTitle": "Operaciones básicas multiplica dos números",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "equal(multiplicar(2, 3), 6);",
+              "err": {},
+              "uuid": "582fa33e-15c8-4712-887f-bce94f21b430",
+              "parentUUID": "91a7f29c-765b-4fda-907a-f1d3399c4e30",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "divide dos números",
+              "fullTitle": "Operaciones básicas divide dos números",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "equal(dividir(2, 3), 1.5);",
+              "err": {},
+              "uuid": "8ccdefdc-05a8-4b87-9b87-f8bbdd464a03",
+              "parentUUID": "91a7f29c-765b-4fda-907a-f1d3399c4e30",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "modulo de dos números coprimos",
+              "fullTitle": "Operaciones básicas modulo de dos números coprimos",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "equal(modulo(2, 3), 1);",
+              "err": {},
+              "uuid": "6493d404-3249-403b-9e47-6c729ae6f646",
+              "parentUUID": "91a7f29c-765b-4fda-907a-f1d3399c4e30",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "modulo de dos números multiplos",
+              "fullTitle": "Operaciones básicas modulo de dos números multiplos",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "equal(modulo(12, 3), 0);",
+              "err": {
+                "message": "AssertionError: 0",
+                "estack": "AssertionError [ERR_ASSERTION]: 0\n    at Context.<anonymous> (file:///C:/Users/sergi/fuentes/resueltos_net/8-JavaScript/Testing/Ejemplo1/test/test.operaciones.js:19:5)\n    at process.processImmediate (node:internal/timers:471:21)",
+                "diff": null
+              },
+              "uuid": "ff499857-09f4-4b48-bbc9-ef110262d999",
+              "parentUUID": "91a7f29c-765b-4fda-907a-f1d3399c4e30",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5cb80a5c-3cb5-446c-b4dc-5cf6acef6a12",
+            "582fa33e-15c8-4712-887f-bce94f21b430",
+            "8ccdefdc-05a8-4b87-9b87-f8bbdd464a03",
+            "6493d404-3249-403b-9e47-6c729ae6f646"
+          ],
+          "failures": [
+            "ff499857-09f4-4b48-bbc9-ef110262d999"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 6000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 6000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

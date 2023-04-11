@@ -1,10 +1,10 @@
 {
-  "name": "test-demo",
+  "name": "ejemplo1",
   "type": "module",
   "version": "1.0.0",
-  "description": "Ejemplos de uso de testing javascript",
+  "description": "Operaciones básicas",
   "scripts": {
-    "test": "mocha Testing/**/test/test*.js --reporter mochawesome --timeout 6000 --exit"
+    "test": "mocha ./test --reporter mochawesome --timeout 60000 --exit"
   },
   "directories": {
     "test": "./Testing/**/test"
@@ -16,3 +16,5 @@
     "mochawesome": "^7.1.3"
   }
 }
+
+  
