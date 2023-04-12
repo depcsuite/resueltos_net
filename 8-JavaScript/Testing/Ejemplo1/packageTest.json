@@ -6,9 +6,6 @@
   "scripts": {
     "test": "mocha ./test --reporter mochawesome --timeout 60000 --exit"
   },
-  "directories": {
-    "test": "./Testing/**/test"
-  },
   "license": "ISC",
   "dependencies": {
     "assert": "^2.0.0",
