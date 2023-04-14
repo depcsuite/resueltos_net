@@ -1,3 +1,4 @@
 {
-    "console-ninja.autoClearLogViewerOnFileChanges": false
+    "console-ninja.autoClearLogViewerOnFileChanges": false,
+    "liveServer.settings.port": 5501
 }

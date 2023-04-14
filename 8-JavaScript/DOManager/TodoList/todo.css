@@ -1,0 +1,25 @@
+.todo-wrapper{
+    font-style: large;
+    font-family:'Courier New', Courier, monospace
+}
+
+.buttonTL{
+    margin-left: 30px;
+}
+
+.todo{
+   font-family: 'Courier New', Courier, monospace;
+}
+
+li:hover{
+    color: blueviolet;
+}
+
+#userInput{
+    margin-left: 30px;
+}
+
+.newImage{
+    display: block;
+}
+
